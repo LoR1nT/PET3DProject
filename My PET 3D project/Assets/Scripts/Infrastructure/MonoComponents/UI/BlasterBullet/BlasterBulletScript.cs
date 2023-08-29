@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlasterBulletScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody Rigidbody;
+    public GameObject BlasterBullet;
+    public GameObject BlasterBulletParticleSystem;
+    public float time;
+
+    private void Update()
     {
-        
+
+        if (time > 0)
+        {
+            time -= Time.deltaTime;
+        }
+        else
+        {
+            BulletDestroy();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        BulletDestroy();
+    }
+
+    public void BulletDestroy()
+    {
+        Object.Destroy(BlasterBullet);
+        GameObject explosion = Instantiate(BlasterBulletParticleSystem, BlasterBullet.transform.position, BlasterBullet.transform.rotation);
+        Destroy(explosion, 1.1f);
     }
 }

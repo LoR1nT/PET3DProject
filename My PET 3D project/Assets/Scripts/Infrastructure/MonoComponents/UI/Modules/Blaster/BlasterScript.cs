@@ -11,9 +11,10 @@ namespace Assets.Scripts.UI.Modules.Blaster
         private void Start()
         {
             _blasterController = new BlasterController(_blasterModel);
+            _blasterController.Intialize();
         }
 
-        void Update()
+        void FixedUpdate()
         {
             _blasterController.Fire();
         }
