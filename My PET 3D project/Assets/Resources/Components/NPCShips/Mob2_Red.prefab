@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7491334374420456421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.360207, y: 29.96323, z: 323.6112}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -86,7 +86,7 @@ MonoBehaviour:
     _bigExposion: {fileID: 7425372364673568362, guid: dba638532f79cc74a8ae33ce55ffab7b, type: 3}
     _health: 100
     _shields: 300
-    _speed: 50
+    _speed: 70
     _rotationSpeed: 15
     _sensetive: 0
     _isPlayer: 0
@@ -483,6 +483,10 @@ PrefabInstance:
       propertyPath: _shipComponentModel._shipMainScript
       value: 
       objectReference: {fileID: 2473356787049606849}
+    - target: {fileID: 1588716461955916304, guid: b6362f50ca5d7b145ba56bc6c23080ee, type: 3}
+      propertyPath: _blasterModel._allowedRange
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1855713711530517209, guid: b6362f50ca5d7b145ba56bc6c23080ee, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -655,6 +659,10 @@ PrefabInstance:
       propertyPath: _shipComponentModel._shipMainScript
       value: 
       objectReference: {fileID: 2473356787049606849}
+    - target: {fileID: 1588716461955916304, guid: b6362f50ca5d7b145ba56bc6c23080ee, type: 3}
+      propertyPath: _blasterModel._allowedRange
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1855713711530517209, guid: b6362f50ca5d7b145ba56bc6c23080ee, type: 3}
       propertyPath: m_Layer
       value: 7

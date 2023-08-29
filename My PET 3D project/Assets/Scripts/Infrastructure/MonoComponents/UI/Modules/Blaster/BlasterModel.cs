@@ -12,6 +12,7 @@ namespace Assets.Scripts.UI.Modules.Blaster
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private bool _isPlayer;
         [SerializeField] private int _fireRate;
+        [SerializeField] private float _allowedRange;
 
         public BlasterBulletScript BulletPrefab { get { return _bulletPrefab; } }
         public GameObject BlasterFirePoint { get { return _blasterFirePoint; } }
@@ -19,5 +20,6 @@ namespace Assets.Scripts.UI.Modules.Blaster
         public float BulletSpeed { get { return _bulletSpeed; } }
         public bool IsPlayer { get { return _isPlayer;} }
         public int FireRate { get { return _fireRate;} }
+        public float AllowedRange { get { return _allowedRange;} }
     }
 }

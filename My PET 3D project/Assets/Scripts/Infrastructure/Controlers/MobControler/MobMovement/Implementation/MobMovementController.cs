@@ -1,9 +1,4 @@
 ﻿using Assets.Scripts.UI.Ship;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Infrastructure.Controlers.MobControler.MobMovement.Implementation
@@ -11,18 +6,38 @@ namespace Assets.Scripts.Infrastructure.Controlers.MobControler.MobMovement.Impl
     public class MobMovementController
     {
         private ShipModel _mobModel;
+        private PlayerIndificator _target;
         private GameObject _mob;
-        private float _planeSpeedBoost = 1;
+        private Rigidbody _mobRigidbody;
 
         public MobMovementController(ShipModel mobModel)
         {
             _mobModel = mobModel;
             _mob = _mobModel.Ship;
+            _mobRigidbody = _mob.GetComponent<Rigidbody>();
         }
 
         public void Movement()
         {
-            _mobModel.Rigidbody.velocity = _mobModel.Ship.transform.forward * _planeSpeedBoost * _mobModel.Speed;
+            UpdateTargetPosition();
+        }
+
+        private void UpdateTargetPosition()
+        {
+            _target = GameObject.FindObjectOfType<PlayerIndificator>();
+            Debug.Log("FindTarget" + _target);
+            if(_target.gameObject.layer == 6)
+            {
+                MobAIM();
+            }
+        }
+
+        private void MobAIM()
+        {
+            Debug.Log("StartMoving");
+            _mob.transform.LookAt(_target.transform.position);
+            _mobRigidbody.velocity = _mob.transform.forward * _mobModel.Speed;
+
         }
 
     }
